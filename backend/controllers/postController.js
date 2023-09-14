@@ -21,8 +21,6 @@ exports.createPost = async (req, res, next) => {
 
     // CHECK THE CATEGORY
     let category = await Category.findOne({ name: type });
-    console.log('category: ',category);
-    console.log("categoryName: ", type)
     if (!category) {
       category = Category.create({ name: type });
     }
@@ -38,7 +36,6 @@ exports.createPost = async (req, res, next) => {
           url: result.secure_url,
         },
     });
-    console.log(post)
     res.status(201).json({
       success: true,
       post,

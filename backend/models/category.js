@@ -6,7 +6,7 @@ const categorySchema = new mongoose.Schema({
 
    name: {
        type: String,
-       enum: ['Yazilar', 'Şiirler', 'Makaleler', 'Gündeme Dair'] ,
+       enum: ['Yazılar', 'Şiirler', 'Makaleler', 'Gündeme Dair'] ,
        trim: true,
        required : [true, 'Please add a category Name'],
       

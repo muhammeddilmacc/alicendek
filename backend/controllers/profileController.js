@@ -10,7 +10,6 @@ exports.updateProfile = async (req, res, next) => {
 
   try {
     // check if there exist a profile
-    console.log(req.params.id);
     let profile = await Profile.findById(req.params.id);
 
     if (!profile) {
@@ -50,7 +49,6 @@ exports.getProfile = async (req, res, next) => {
   try {
     const user = await User.findById(req.user.id).select("-password");
     const profile = await Profile.findById(user.profile);
-    console.log(user.profile)
     res.status(200).json({
       success: true,
       profile,
