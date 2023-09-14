@@ -24,7 +24,7 @@ const Home = () => {
   const showPosts = async (section) => {
     setLoading(true);
     try {
-      const { data } = await axios.get(`/https://alicendek-server-drpy.onrender.com/${section.toLowerCase()}`);
+      const { data } = await axios.get(`/api/feed/${section.toLowerCase()}`);
       setPosts(data.posts);
       setLoading(false);
     } catch (error) {
