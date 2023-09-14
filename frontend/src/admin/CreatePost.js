@@ -116,7 +116,7 @@ const CreatePost = () => {
                 <MenuItem value={"Yazılar"}>Yazılar</MenuItem>
                 <MenuItem value={"Şiirler"}>Şiirler</MenuItem>
                 <MenuItem value={"Makaleler"}>Makaleler</MenuItem>
-                <MenuItem value={"Gündeme Dair"}>Gündeme Dair</MenuItem>
+                <MenuItem value={"Gündeme-Dair"}>Gündeme Dair</MenuItem>
               </Select>
             </FormControl>
           </div>
