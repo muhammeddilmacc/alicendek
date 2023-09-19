@@ -8,8 +8,7 @@ const { ObjectId } = mongoose.Schema;
 
 //create post
 exports.createPost = async (req, res, next) => {
-  const { title, content, postedBy, type, image, likes, comments } =
-    req.body;
+  const { title, content, postedBy, type, image, likes, comments } = req.body;
 
   try {
     //upload image in cloudinary
@@ -22,19 +21,18 @@ exports.createPost = async (req, res, next) => {
     // CHECK THE CATEGORY
     let category = await Category.findOne({ name: type });
     if (!category) {
-      category = Category.create({ name: type });
+      category = await Category.create({ name: type });
     }
-
     // CREATE POST
     const post = await Post.create({
       title,
       content,
       postedBy: req.user._id,
       category: category,
-        image: {
-          public_id: result.public_id,
-          url: result.secure_url,
-        },
+      image: {
+        public_id: result.public_id,
+        url: result.secure_url,
+      },
     });
     res.status(201).json({
       success: true,
@@ -221,7 +219,7 @@ exports.removeLike = async (req, res, next) => {
 
 exports.showYazilar = async (req, res, next) => {
   try {
-    const categori = await Category.findOne({ name: "Yazilar" });
+    const categori = await Category.findOne({ name: "Yazılar" });
     const posts = await Post.find({ category: categori._id })
       .sort({ createdAt: -1 })
       .populate("postedBy", "name");
@@ -339,16 +337,3 @@ exports.showSingleGundemeDair = async (req, res, next) => {
   }
 };
 
-exports.showHakkimda = async (req, res, next) => {
-  try {
-    const posts = await Post.find({ category: "Hakkımda" })
-      .sort({ createdAt: -1 })
-      .populate("postedBy", "name");
-    res.status(200).json({
-      success: true,
-      posts,
-    });
-  } catch (error) {
-    next(error);
-  }
-};

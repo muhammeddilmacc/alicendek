@@ -63,13 +63,13 @@ const PostCard = ({
   return (
     <div
       key={id}
-      className="h-auto w-auto shadow-sm grid grid-cols-4 gap-8 cursor-pointer duration-200 hover:shadow-md pr-4"
+      className="h-auto  max-w-screen-xl xl:max-w-screen-2xl shadow-sm grid grid-cols-1 md:grid-cols-4 gap-0 md:gap-6 cursor-pointer duration-200 hover:shadow-md pr-0 md:pr-4 rounded-lg"
     >
-      <Link to={`/post/${id}`} className=" m-auto h-[200px]  overflow-hidden object-cover">
-        <img src={image ? image : ""} className="col-span-1 w-auto "></img>
+      <Link to={`/post/${id}`} className=" m-auto w-full overflow-hidden object-cover">
+        <img src={image ? image : ""} className="col-span-1 object-cover h-48 sm:h-72 md:h-52  lg:h-48 w-full"></img>
       </Link>
 
-      <div className="col-span-3 flex flex-col">
+      <div className="col-span-3 flex flex-col px-4 py-2 md:py-0 md:px-2">
         <Link to={`/post/${id}`}>
           <div className="flex flex-row justify-between">
             <h2 className="text-2xl font-bold pb-3 ">{title}</h2>

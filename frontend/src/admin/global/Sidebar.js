@@ -64,7 +64,7 @@ const SidebarAdm = () => {
                                 userInfo && userInfo.role === 'admin' ?
                                     <>
                                         <MenuItem component={<Link to="/admin/dashboard" />} icon={<DashboardIcon />}> Dashboard </MenuItem>
-                                        <MenuItem component={<Link to="/admin/post/create" />} icon={<PostAddIcon />}> Create post </MenuItem>
+                                        <MenuItem component={<Link to="/api/admin/create-post" />} icon={<PostAddIcon />}> Create post </MenuItem>
                                     </> :
                                     <>
                                         <MenuItem component={<Link to="/user/dashboard" />} icon={<DashboardIcon />}> Dashboard </MenuItem>

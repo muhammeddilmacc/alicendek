@@ -57,7 +57,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://alicendek-server-drpy.onrender.com/",
+  "proxy": "http://localhost:9000",
   "devDependencies": {
     "tailwindcss": "^3.3.3"
   }

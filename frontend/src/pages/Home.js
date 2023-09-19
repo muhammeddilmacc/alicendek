@@ -60,7 +60,7 @@ const Home = () => {
     <div className="h-full w-full fixed bg-slate-50 overflow-scroll">
       <Navbar />
       <h3 className="text-3xl text-center text-slate-800 pt-12">{section}</h3>
-      <div className="w-auto h-auto flex flex-col pt-12 gap-12 px-56 pb-12 bg-slate-50">
+      <div className="w-auto h-auto flex flex-col pt-12 gap-12 px-8 sm:px-24 md:px-16 lg:px-36 pb-12 bg-slate-50 grid place-content-center">
         {uiPosts.map((post) => (
           <PostCard
             key={post._id}

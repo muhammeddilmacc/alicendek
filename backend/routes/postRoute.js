@@ -10,7 +10,6 @@ const {
   addLike,
   removeLike,
 } = require("../controllers/postController");
-const { isAuthenticated, isAdmin } = require("../middleware/auth");
 
 // custom controllers
 const {
@@ -22,13 +21,11 @@ const {
   showSingleMakale,
   showGundemeDair,
   showSingleGundemeDair,
-  showHakkimda,
 } = require("../controllers/postController");
-const { updateProfile, getProfile } = require("../controllers/profileController");
 
-//blog routes
-router.post("/post/create", isAuthenticated, isAdmin, createPost);
-// this will bi anasayfa
+const { isAuthenticated, isAdmin } = require("../middleware/auth");
+const {showHakkimda} = require("../controllers/profile.controller");
+
 
 router.get("/posts/show", showPost);
 router.get("/post/:id", showSinglePost);
@@ -38,7 +35,7 @@ router.put("/comment/post/:id", isAuthenticated, addComment);
 router.put("/addlike/post/:id", isAuthenticated, addLike);
 router.put("/removelike/post/:id", isAuthenticated, removeLike);
 
-// custom routes
+// user custom routes
 router.get("/feed/anasayfa", showPost);
 router.get("/feed/yazilar", showYazilar);
 router.get("/feed/yazilar/:id", showSingleYazi);
@@ -49,7 +46,5 @@ router.get("/feed/makaleler/:id", showSingleMakale);
 router.get("/feed/gundeme-dair", showGundemeDair);
 router.get("/feed/gundeme-dair/:id", showSingleGundemeDair);
 router.get("/feed/hakkimda", showHakkimda);
-router.put("/admin/profile/update/:id", updateProfile);
-router.get("/admin/profile",isAuthenticated, getProfile);
 
 module.exports = router;

@@ -207,9 +207,9 @@ export default function Navbar() {
 
         <MenuItem
           className="!pl-7"
-          onClick={() => changeSectionHandler("Hakkimda")}
         >
-          Hakkımda
+                 <Link to={"/hakkimda"}>Hakkımda</Link>
+
         </MenuItem>
       </MenuList>
 
@@ -281,8 +281,9 @@ export default function Navbar() {
 
               </MenuItem>
 
-              <MenuItem onClick={() => changeSectionHandler("Hakkimda")}>
-               Hakkımda
+              <MenuItem>
+              <Link to={"/hakkimda"}>Hakkımda</Link>
+
 
               </MenuItem>
             </MenuList>

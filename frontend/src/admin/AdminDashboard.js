@@ -21,7 +21,7 @@ const AdminDashboard = () => {
     
     const displayPost = async (section) => {
         try {
-            const { data } = await axios.get(`/api/feed/${section.toLowerCase()}`);
+            const { data } = await axios.get(`/api/admin/${section.toLowerCase()}`);
             console.log(section)
             setPosts(data.posts);
         } catch (error) {
@@ -139,7 +139,7 @@ const AdminDashboard = () => {
                 Posts
             </Typography>
             <Box sx={{ pb: 2, display: "flex", justifyContent: "right" }}>
-                <Button variant='contained' color="success" startIcon={<AddIcon />}><Link style={{ color: 'white', textDecoration: 'none' }} to='/admin/post/create'>Create Post</Link> </Button>
+                <Button variant='contained' color="success" startIcon={<AddIcon />}><Link style={{ color: 'white', textDecoration: 'none' }} to='/api/admin/create-post'>Create Post</Link> </Button>
             </Box>
             <Paper sx={{ bgcolor: "white" }} >
 
