@@ -44,7 +44,7 @@ const App = () => {
               <Route path='/post/:id' element={<SinglePost />} />
               <Route path='*' element={<NotFound />} />
               <Route path='/admin/dashboard' element={<AdminRoute><Navbar/><AdminDashboardHOC /></AdminRoute>} />
-              <Route path='/admin/create-post' element={<AdminRoute><Navbar/><CreatePostHOC /></AdminRoute>} />
+              <Route path='/api/admin/create-post' element={<AdminRoute><Navbar/><CreatePostHOC /></AdminRoute>} />
               <Route path='/admin/post/edit/:id' element={<AdminRoute><Navbar/><EditPostHOC /></AdminRoute>} />
               <Route path='/user/dashboard' element={<UserRoute><UserDashboardHOC /></UserRoute>} />
             </Routes>
